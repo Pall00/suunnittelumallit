@@ -6,10 +6,10 @@ class Cheese extends ToppingDecorator {
     }
 
     public String getDescription() {
-        return pizza.getDescription() + ", juusto";
+        return super.getDescription() + ", juusto";
     }
 
     public double getCost() {
-        return pizza.getCost() + 1.00;
+        return super.getCost() + 1.00;
     }
 }
