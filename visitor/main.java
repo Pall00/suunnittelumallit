@@ -1,13 +1,13 @@
 package visitor;
 
-import javax.naming.Context;
-
 public class Main {
     public static void main(String[] args) {
-        Context context = new Context(new ConcreteStateA());
+        State initialState = new StateA();
+        StateContext context = new StateContextImpl(initialState);
+        StateVisitor visitor = new StateVisitorImpl();
 
         for (int i = 0; i < 5; i++) {
-            context.request();
+            context.performAction(visitor);
         }
     }
 }
