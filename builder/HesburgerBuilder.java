@@ -2,25 +2,26 @@ package builder;
 
 import java.util.ArrayList;
 
-class HesburgerBuilder implements BurgerBuilder {
-    private ArrayList<Object> ingredients;
+public class HesburgerBuilder extends HampurilaisBuilder {
+    private ArrayList<HampurilaisenOsa> osat;
 
     public HesburgerBuilder() {
-        this.ingredients = new ArrayList<>();
+        osat = new ArrayList<>();
     }
 
-    @Override
-    public void addPihvi() {
-        ingredients.add(new HesburgerPihvi());
+    public void lisääSalaatti() {
+        osat.add(new Salaatti());
     }
 
-    @Override
-    public void addSalaatti() {
-        ingredients.add(new JäävuoriSalaatti());
+    public void lisääPihvi() {
+        osat.add(new Pihvi());
     }
 
-    @Override
-    public ArrayList<Object> getBurger() {
-        return ingredients;
+    public void lisääJuusto() {
+        osat.add(new Juusto());
+    }
+
+    public ArrayList<HampurilaisenOsa> getBurger() {
+        return osat;
     }
 }

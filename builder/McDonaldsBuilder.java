@@ -1,26 +1,25 @@
 package builder;
 
-class McDonaldsBuilder implements BurgerBuilder {
-    private StringBuilder ingredients;
+public class McDonaldsBuilder extends HampurilaisBuilder {
+    private StringBuilder burger;
 
     public McDonaldsBuilder() {
-        this.ingredients = new StringBuilder();
+        burger = new StringBuilder();
     }
 
-    @Override
-    public void addPihvi() {
-        ingredients.append("McDonaldsPihvi,");
+    public void lisääSalaatti() {
+        burger.append("Jäävuorisalaatti\n");
     }
 
-    @Override
-    public void addSalaatti() {
-        ingredients.append("JäävuoriSalaatti,");
+    public void lisääPihvi() {
+        burger.append("Pihvi\n");
     }
 
-    @Override
+    public void lisääJuusto() {
+        burger.append("Juusto");
+    }
+
     public StringBuilder getBurger() {
-        return ingredients;
+        return burger;
     }
 }
-    
-

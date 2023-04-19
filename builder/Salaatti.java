@@ -1,4 +1,4 @@
 package builder;
 
-abstract class Salaatti {}
-class JäävuoriSalaatti extends Salaatti {}
+public class Salaatti extends HampurilaisenOsa {
+}
